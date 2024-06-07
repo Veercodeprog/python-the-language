@@ -7,8 +7,8 @@
 
 print(4+5j)
 
-#list
-print([1,2,3,4,5])
+#listprint([1,2,3,4,5])
+
 
 #tuple
 print((1,2,3,4,5))

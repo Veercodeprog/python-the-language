@@ -113,7 +113,7 @@ T5 = tuple("hello")  # ('h', 'e', 'l', 'l', 'o')
 # 2. sets are unordered i.e no indexing /slcing
 # 3. sets dont allow mutable elements or data types
 # 4. sets are mutable
-
+# 5. sets are faster than lists
 S1 = {1, 2, 3, 4, 5}  # type(S1) = set
 S2 = {}  # empty dictionary not set
 S3 = set()  # empty set
@@ -126,3 +126,95 @@ S4 = {"hello", 4, 5.5, True}  # heterogenous set
 S4 = {(1, 2), (3, 4), (5, 6)}  # set of tuples
 # S5 = {[1, 2, 3], "Hello"}  # error because of list in set
 # 3d and 2d sets are not possible
+
+# sets allow add, remove, discard, pop, clear, update, union,
+# intersection, difference, symmetric difference
+# add - adds an element to the set
+# remove - removes an element from the set
+# discard - removes an element from the set
+# pop - removes an element from the set
+# del - deletes the set
+# clear - clears the set
+# update - adds multiple elements to the set
+# union - returns the union of two sets
+# intersection - returns the intersection of two sets
+# difference - returns the difference of two sets i.e elements in set1 but not
+# in set2
+# symmetric difference - returns the symmetric difference of two sets
+# issubset - returns true if the set is a subset of another set
+# issuperset - returns true if the set is a superset of another set
+# isdisjoint - returns true if the set has no common elements with another set
+
+S1.add(6)  # {1, 2, 3, 4, 5, 6}
+S1.remove(6)  # {1, 2, 3, 4, 5}
+S1.discard(6)  # {1, 2, 3, 4, 5}
+S1.pop()  # removes a random element from the set
+# basically pop deleted the last element from the set based on the address
+
+# +, *, len(), max(), min(), sum(), sorted(), reversed() are not possible in sets
+
+# functions in sets
+# len() - returns the length of the set
+# max() - returns the maximum element in the set
+# min() - returns the minimum element in the set
+# sum() - returns the sum of the elements in the set
+# sorted() - returns the sorted set
+# reversed() - returns the reversed set
+
+
+# Dictionaries: Dictionaries are used to store data values in key:value pairs
+# dictionaries are mutable
+# {'Name': 'Nitish', 'Gender': 'Male'}
+# rules of dictionaries
+# 1. dictionaries has no indexing
+# 2. dictionaries is a mutable types
+# 3. keys-> immutable, values-> they can be mutable
+# 4. keys should be unique
+
+# immutable -: List/sets/ dictionary
+# mutable -: Strings/tuple/int/float/boolean/complex
+
+D = {}  # empty dictionary
+D1 = {'Name': 'Nitish', 'Gender': 'Male'}
+
+# D2 = {[1, 2, 3]: "Nitish"} # error because list is mutable
+D3 = {(1, 2, 3): "Nitish"}  # works because tuple is immutable
+# 2d and 3d dictionaries are possible
+
+# 2d dictionary
+D4 = {'Name': {'First': 'Nitish', 'Last': 'Kumar'},
+      "college": "IIT", "Branch": "CSE"}
+
+# accessing elements in dictionary
+# 1. using keys
+# 2. using get() function
+# 3. using items() function
+# 4. using keys() function
+# 5. using values() function
+
+D4['Name']  # {'First': 'Nitish', 'Last': 'Kumar'}
+D4.get('Name')  # {'First': 'Nitish', 'Last': 'Kumar'}
+# dict_items([('Name', {'First': 'Nitish', 'Last': 'Kumar'}), ('college', 'IIT'), ('Branch', 'CSE')])
+D4.items()
+D4.keys()  # dict_keys(['Name', 'college', 'Branch'])
+# dict_values([{'First': 'Nitish', 'Last': 'Kumar'}, 'IIT', 'CSE'])
+D4.values()
+
+# editing elements in dictionary
+D4["Name"]["First"] = "deepak"
+
+# add a new key value pair
+# {'Name': {'First': 'deepak', 'Last': 'Kumar'}, 'college': 'IIT', 'Branch': 'CSE', 'Age': 22}
+D4["Age"] = 22
+
+# deleting elements in dictionary
+# 1. del dictionary[key]: deletes the key value pair
+# 2. pop: removes the key value pair
+# 3. popitem: removes the last key value pair
+# 4. clear: clears the dictionary
+# 5. del dictionary: deletes the dictionary
+print("IIT" in D4)  # False
+print("First" in D4)  # False
+D4.keys()  # dict_keys(['Name', 'college', 'Branch', 'Age'])
+# dict_values([{'First': 'deepak', 'Last': 'Kumar'}, 'IIT', 'CSE', 22])
+D4.values()
